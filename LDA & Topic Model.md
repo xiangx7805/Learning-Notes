@@ -21,9 +21,9 @@ Unfortunately, there is no way to infer the topics exactly: there are too many u
 
 :question: How are we going to decide whether this occurrence of W belongs to topic *Z*?
 
-We can’t know for sure. But one way to guess is to consider two questions.
-  A) How often does word *W* appear in topic *Z* elsewhere? If *W* often occurs in discussions of *Z*, then this instance of *W* might belong to *Z* as well. :grey_exclamation: But a word can be common in more than one topic. :point_right: So next we consider
-  B) How common is topic *Z* in the rest of this document?
+We can’t know for sure. But one way to guess is to consider two questions.    
+A)   How often does word *W* appear in topic *Z* elsewhere? If *W* often occurs in discussions of *Z*, then this instance of *W* might belong to *Z* as well. :exclamation: But a word can be common in more than one topic. :point_right: So next we consider  
+B)   How common is topic *Z* in the rest of this document?
 
 :cactus: Here’s what we’ll do.   
 For each possible topic *Z*, we’ll multiply the frequency of this word type *W* in *Z* by the number of other words in document *D* that already belong to *Z*. The result will represent the probability that this word came from *Z*. Here’s the actual formula:    
