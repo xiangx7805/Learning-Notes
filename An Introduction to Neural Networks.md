@@ -310,7 +310,7 @@ Then, we can write loss as a multivariable function:
 
 Imagine we wanted to tweak ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20%5Clarge%20w_1). How would loss *L* change if we changed ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20%5Clarge%20w_1)? :arrow_right: That’s a question the partial derivative ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_jvn%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D) can answer.
 
-*Here gloss the math part, can check it in the original post.*
+*(Here gloss the math part, can check it in the original post.)*
 
 >The system of calculating partial derivatives by working backwards is known as **backpropagation**, or “backprop”.
 
