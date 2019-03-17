@@ -233,8 +233,8 @@ Diana	|120	|60 |	F
 Let’s train our network to predict someone’s gender given their weight and height:
 ![](https://victorzhou.com/media/neural-network-post/network2.svg)
 
-Make some data transformation :
-*Normally, shift by the mean. Here choose 135 & 66 just to make numbers look nice.*
+Make some data transformation :  
+(*Normally, shift by the mean. Here choose 135 & 66 just to make numbers look nice.*)
 
 Name | Weight (minus 135) |	Height (minus 66) |	Gender
 ------------ | ------------- | ------------ | -------------
@@ -243,8 +243,26 @@ Bob	|25 |6 | 0
 Charlie |17	|4 |	0
 Diana	|-15	|-6 |	1
 
-
 ## Loss :droplet:
+
+**Loss:** Before training the network, we first need a way to quantify how “good” it’s doing so that it can try to do “better”.
+
+We’ll use the **mean squared error** (MSE) loss:  
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20%5Clarge%20MSE%20%3D%20%5Cfrac%7B1%7D%7Bn%7D%20%5Csum%20%5En_%7Bi%3D1%7D%20%28y_%7Btrue%7D%20-y_%7Bpred%7D%20%29%5E%7B%5E%7B2%7D%7D)
+
+  where
+
+  *  *n* is the number of samples, which is 4 (Alice, Bob, Charlie, Diana).
+  *  *y* represents the variable being predicted, which is Gender.
+  *  ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20y_%7Btrue%7D) is the true value of the variable (the “correct answer”). For example,![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20y_%7Btrue%7D) for Alice would be 1 (Female).
+  *  ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20y_%7Bpred%7D) is the predicted value of the variable. It’s whatever our network outputs.
+
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20%28y_%7Btrue%7D%20-y_%7Bpred%7D%20%29%5E%7B%5E%7B2%7D%7D) is known as the **squared error**. Our loss function is simply taking the average over all squared errors (hence the name mean squared error). The better our predictions are, the lower our loss will be!
+
+Better predictions = Lower loss.
+
+:sunglasses:**Training a network = trying to minimize its loss.**
+
 ## An Example Loss Calculation :sweat_drops:
 ## Code: MSE Loss :dash:
 
