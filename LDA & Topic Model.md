@@ -40,7 +40,7 @@ The overall emphasis on probability in this technique, so it’s called **probab
 
 :exclamation: By improvement, our model will gradually become more consistent as topics focus on specific words and documents. **But** can’t ever become perfectly consistent, because words and documents don’t line up in one-to-one fashion. So the tendency for topics to concentrate on particular words and documents will eventually be limited by the actual, messy distribution of words across documents.
 
-That’s how topic modeling works in practice. You assign words to topics randomly and then just keep improving the model, to make your guess more internally consistent, until the model reaches an equilibrium that is as consistent as the collection allows.
+:arrows_clockwise: That’s how topic modeling works in practice. You assign words to topics randomly and then just keep improving the model, to make your guess more internally consistent, until the model reaches an equilibrium that is as consistent as the collection allows.
 
 
 
@@ -93,6 +93,6 @@ LDA seemed like a fragile and unnecessarily complicated technique.
 
   
 
-# Article Refrence 
+# Article Refrence :information_desk_person:
 1. [Introduction to Latent Dirichlet Allocation](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)
 2. [Topic modeling made just simple enough.](https://tedunderwood.com/2012/04/07/topic-modeling-made-just-simple-enough/)
