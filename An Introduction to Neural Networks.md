@@ -348,7 +348,7 @@ All we’re doing is subtracting ![equation](https://latex.codecogs.com/svg.late
 
 If we do this for every weight and bias in the network, the loss will slowly decrease and our network will improve.
 
-Our training process will look like this:
+:triangular_flag_on_post:Our training process will look like this:
 
 1.  Choose **one** sample from our dataset. This is what makes it **stochastic gradient descent** - we only operate on one sample at a time.  
 2.  Calculate all the partial derivatives of loss with respect to weights or biases(e.g.![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D),![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_2%7D),etc)  
