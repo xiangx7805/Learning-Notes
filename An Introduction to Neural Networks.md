@@ -1,4 +1,4 @@
-:feet:A simple and quick guideline: 
+# :feet:A simple and quick guideline: 
 
 *  Introduced **neurons**, the building blocks of neural networks.
 *  Used the **sigmoid activation function** in our neurons.
