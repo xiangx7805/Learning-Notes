@@ -27,7 +27,7 @@ We can’t know for sure. But one way to guess is to consider two questions.
 
 :cactus: Here’s what we’ll do.   
 For each possible topic *Z*, we’ll multiply the frequency of this word type *W* in *Z* by the number of other words in document *D* that already belong to *Z*. The result will represent the probability that this word came from *Z*. Here’s the actual formula:    
-![equation](https://latex.codecogs.com/gif.latex?P%5Cleft%20%28%20Z%20%5Cmid%20W%2CD%20%5Cright%20%29%3D%20%5Cfrac%7B%5C%23%20%7E%20of%20%7E%20word%20%7E%20W%20%7E%20in%20%7E%20topic%20Z%20&plus;%20%5Cbeta_%7Bw%7D%7D%7B%7B%20total%20%7E%20tokens%20%7E%20in%20%7E%20Z%20&plus;%20%7D%5Cbeta%7D%20%7E%20%5Ctimes%20%7E%20%5Ctext%7B%28%5C%23%20of%20words%20in%20D%20that%20belongs%20to%20Z%29%20%7D&plus;%20%5Calpha)
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20P%28%20Z%20%5Cmid%20W%2CD%29%3D%20%5Cfrac%7B%5C%23%20%7E%20of%20%7E%20word%20%7E%20W%20%7E%20in%20%7E%20topic%20Z%20%7E&plus;%20%7E%20%5Cbeta_%7Bw%7D%7D%7B%7B%20total%20%7E%20tokens%20%7E%20in%20%7E%20Z%20%7E%20&plus;%20%7D%7E%20%5Cbeta%7D%20*%20%28%5Ctext%7B%5C%23%20of%20words%20in%20D%20that%20belongs%20to%20Z%20&plus;%20%7D%5Calpha%20%29)
 
 > Greek letters -- “hyperparameters” OR fudge factors.   
 **There’s some chance that this word belongs to topic Z even if it is nowhere else associated with Z; the fudge factors keep that possibility open.**   
