@@ -27,7 +27,8 @@ We can’t know for sure. But one way to guess is to consider two questions.
 
 :cactus: Here’s what we’ll do.   
 For each possible topic *Z*, we’ll multiply the frequency of this word type *W* in *Z* by the number of other words in document *D* that already belong to *Z*. The result will represent the probability that this word came from *Z*. Here’s the actual formula:  
-$$P\left ( Z \mid W,D \right )= \frac{\text{# of word W in topic Z + }\beta_{w}}{ \text{total tokensin Z + }\beta} \times \text{(# of words in D that belongs to Z) + \alpha}$$
+
+$P\left ( Z \mid W,D \right )= \frac{\text{# of word W in topic Z + }\beta_{w}}{ \text{total tokensin Z + }\beta} \times \text{(# of words in D that belongs to Z) + \alpha}$
 
 
 > Greek letters -- “hyperparameters” OR fudge factors.   
