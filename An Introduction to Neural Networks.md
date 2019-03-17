@@ -1,3 +1,15 @@
+:feet:A simple and quick guideline: 
+
+*  Introduced **neurons**, the building blocks of neural networks.
+*  Used the **sigmoid activation function** in our neurons.
+*  Saw that neural networks are just neurons connected together.
+*  Created a dataset with Weight and Height as inputs (or **features**) and Gender as the output (or **label**).
+*  Learned about **loss functions** and the **mean squared error** (MSE) loss.
+*  Realized that training a network is just minimizing its loss.
+*  Used **backpropagation** to calculate partial derivatives.
+*  Used **stochastic gradient descent** (SGD) to train our network.
+
+
 # 1. Building Blocks: Neurons :seedling:
 
 **Neurons** : the basic unit of a neural network. **A neuron takes inputs, does some math with them, and produces one output.** Here’s what a 2-input neuron looks like:  
@@ -22,7 +34,7 @@ Often, sigmoid function refers to the special case of the **logistic function**.
 
 :raising_hand:This process of passing inputs forward to get an output is known as **feedforward.**
 
-## A Simple Example
+## A Simple Example :musical_note:
 Assume we have a 2-input neuron that uses the sigmoid activation function and has the following parameters:  
 ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20w%3D%20%5Bw_1%2C%20w_2%5D%3D%5B0%2C1%5D%20%2C%7E%7E%20b%3D4)
 
@@ -31,7 +43,7 @@ Now, let’s give the neuron an input of *x* = [2,3]. We’ll use the dot produc
 
 Thus, the neuron outputs 0.999 given the inputs x=[2,3].
 
-## Coding a Neuron in Python
+## Coding a Neuron in Python :notes:
 
 ```Python
 import numpy as np
@@ -68,11 +80,30 @@ This network has 2 inputs, a hidden layer with 2 neurons ![equation](https://lat
 
 > A **hidden layer** is any layer between the input (first) layer and output (last) layer. There can be multiple hidden layers!
 
+## An Example: Feedforward :running:
+## Coding a Neuron in Python :dancer:
+
 # 3. Training a Neural Network, Part 1 :evergreen_tree:
 
+## Loss :droplet:
+## An Example Loss Calculation :sweat_drops:
+## Code: MSE Loss :dash:
+
 # 4. Training a Neural Network, Part 2 :deciduous_tree:
+## Example: Calculating the Partial Derivative  :star2:
+## Training: Stochastic Gradient Descent :sparkles:
+## Code: A Complete Neural Network :dizzy:
 
 # Now What? :christmas_tree:
+
+There’s still much more to do:
+
+*  Experiment with bigger / better neural networks using proper machine learning libraries like [Tensorflow](https://www.tensorflow.org/), [Keras](https://keras.io/), and [PyTorch](https://pytorch.org/).
+*  Tinker with [a neural network in your browser](https://playground.tensorflow.org/).
+*  Discover [other activation functions](https://keras.io/activations/) besides sigmoid.
+*  Discover [other optimizers](https://keras.io/optimizers/) besides SGD.
+*  Learn about [Convolutional Neural Networks](https://en.wikipedia.org/wiki/Convolutional_neural_network), which revolutionized the field of Computer Vision.
+*  Learn about [Recurrent Neural Networks](https://en.wikipedia.org/wiki/Recurrent_neural_network), often used for Natural Language Processing (NLP).
 
 # Article Source :tanabata_tree:
 [*Victor Zhou*'s Blog : Machine Learning for Beginners: An Introduction to Neural Networks](https://victorzhou.com/blog/intro-to-neural-networks/)
