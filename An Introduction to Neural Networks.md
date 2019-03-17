@@ -513,7 +513,7 @@ network.train(data, all_y_trues)
 
 *Complete code also available on [Github](https://github.com/vzhou842/neural-network-from-scratch).*
 
-Our loss steadily decreases as the network learns:
+Our loss steadily decreases as the network learns:  
 ![](https://victorzhou.com/media/neural-network-post/loss.png)
 
 Now use the network to predict genders:
