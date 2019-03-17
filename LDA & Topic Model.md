@@ -44,9 +44,9 @@ Topic modeling gives us a way to infer the latent structure behind a collection 
 
 > :cop: **A bit of tuning required up front**  
 In particular, a standard list of `stopwords` is rarely adequate.   
-For instance, in topic-modeling fiction it's useful to get rid of
-  *   *the most common personal pronouns*: because otherwise the difference between 1st and 3rd person point-of-view becomes a dominant signal that crowds out other interesting phenomena.
-  *   *personal names*: otherwise you discover strong, boring connections between every book with a character named “Richard.”   
+For instance, in topic-modeling fiction it's useful to get rid of  
+*   *the most common personal pronouns*: because otherwise the difference between 1st and 3rd person point-of-view becomes a dominant signal that crowds out other interesting phenomena.  
+*   *personal names*: otherwise you discover strong, boring connections between every book with a character named “Richard.”   
 This sort of thing is very much a critical judgment call; it’s not a science.
 
 
@@ -87,6 +87,6 @@ LDA seemed like a fragile and unnecessarily complicated technique.
 
   
 
-*ArtiCle Refrence*
+# Article Refrence 
 1. [Introduction to Latent Dirichlet Allocation](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)
 2. [Topic modeling made just simple enough.](https://tedunderwood.com/2012/04/07/topic-modeling-made-just-simple-enough/)
