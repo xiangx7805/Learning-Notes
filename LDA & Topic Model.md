@@ -25,18 +25,24 @@ We can’t know for sure. But one way to guess is to consider two questions.
 1.   How often does word *W* appear in topic *Z* elsewhere? If *W* often occurs in discussions of *Z*, then this instance of *W* might belong to *Z* as well. :exclamation: But a word can be common in more than one topic. :point_right: So next we consider  
 2.   How common is topic *Z* in the rest of this document?
 
+
 :cactus: Here’s what we’ll do.   
-For each possible topic *Z*, we’ll multiply the frequency of this word type *W* in *Z* by the number of other words in document *D* that already belong to *Z*. The result will represent the probability that this word came from *Z*. Here’s the actual formula:    
+For each possible topic *Z*, we’ll multiply the frequency of this word type *W* in *Z* by the number of other words in document *D* that already belong to *Z*. The result will represent the probability that this word came from *Z*. Here’s the actual formula:   
+
 ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20P%28%20Z%20%5Cmid%20W%2CD%29%3D%20%5Cfrac%7B%5C%23%20%7E%20of%20%7E%20word%20%7E%20W%20%7E%20in%20%7E%20topic%20Z%20%7E&plus;%20%7E%20%5Cbeta_%7Bw%7D%7D%7B%7B%20total%20%7E%20tokens%20%7E%20in%20%7E%20Z%20%7E%20&plus;%20%7D%7E%20%5Cbeta%7D%20*%20%28%5Ctext%7B%5C%23%20of%20words%20in%20D%20that%20belongs%20to%20Z%20&plus;%20%7D%5Calpha%20%29)
 
 > Greek letters -- *“hyperparameters”* OR *fudge factors*.   
 **There’s some chance that this word belongs to topic Z even if it is nowhere else associated with Z; the fudge factors keep that possibility open.** 
 
+
 The overall emphasis on probability in this technique, so it’s called **probabilistic topic modeling**.
+
 
 :exclamation: By improvement, our model will gradually become more consistent as topics focus on specific words and documents. **But** can’t ever become perfectly consistent, because words and documents don’t line up in one-to-one fashion. So the tendency for topics to concentrate on particular words and documents will eventually be limited by the actual, messy distribution of words across documents.
 
 That’s how topic modeling works in practice. You assign words to topics randomly and then just keep improving the model, to make your guess more internally consistent, until the model reaches an equilibrium that is as consistent as the collection allows.
+
+
 
 ## What is it for? :notes:
 
@@ -63,6 +69,8 @@ LDA seemed like a fragile and unnecessarily complicated technique.
 *  Probabilistic methods are also less robust than, say, vector-space methods. **LDA is sensitive to noise**, after all, because it is sensitive to everything else!
 
 :feet: On the whole, if you’re just fishing for interesting patterns in a large collection of documents, probabilistic techniques are the way to go.
+
+
 
 ## Where to go next
 
