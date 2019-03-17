@@ -16,7 +16,7 @@
 ![image of a 2-input neuron](https://victorzhou.com/media/neural-network-post/perceptron.svg)
 
 3 things are happening here.   
-*  First, each input is multiplied by a weight::red_small_square:  
+*  First, each input is multiplied by a weight::apple:  
 ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20x_1%5Crightarrow%20x_1*w_1)  
 ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20x_2%5Crightarrow%20x_2*w_2)
 
