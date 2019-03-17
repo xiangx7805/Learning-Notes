@@ -310,17 +310,24 @@ Then, we can write loss as a multivariable function:
 
 Imagine we wanted to tweak ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20%5Clarge%20w_1). How would loss *L* change if we changed ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cs%20%5Clarge%20w_1)? :arrow_right: That’s a question the partial derivative ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_jvn%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D) can answer.
 
-*(Here gloss the math part, can check it in the original post.)*
+*Here gloss the math part, can check it in the original post.*
 
 >The system of calculating partial derivatives by working backwards is known as **backpropagation**, or “backprop”.
 
-Through **backpropagation** we have :   
-![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20*%20%5Cfrac%7B%5Cpartial%20%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20*%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D),  
-where   
-![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20%5Cfrac%7B%5Cpartial%20%281-y_%7Bpred%7D%29%5E2%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20-2%281-y_%7Bpred%7D%29),    
-![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20y_%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20o_1%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_5h_1&plus;w_6h_2&plus;b_3%29%7D%7B%5Cpartial%20h_1%7D%20%3D%20w_5%20*f%27%28w_5h_1&plus;w_6h_2&plus;b_3%29),      
-![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29%7D%7B%5Cpartial%20w_1%7D%20%3D%20x_1f%27%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29),     
-![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20x_1%20%2Cx_2) are weight and height,    
+Through **backpropagation** we have :
+
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20*%20%5Cfrac%7B%5Cpartial%20%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20*%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D),
+
+where
+
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20%5Cfrac%7B%5Cpartial%20%281-y_%7Bpred%7D%29%5E2%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20-2%281-y_%7Bpred%7D%29),  
+
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20y_%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20o_1%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_5h_1&plus;w_6h_2&plus;b_3%29%7D%7B%5Cpartial%20h_1%7D%20%3D%20w_5%20*f%27%28w_5h_1&plus;w_6h_2&plus;b_3%29),
+
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29%7D%7B%5Cpartial%20w_1%7D%20%3D%20x_1f%27%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29),   
+
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20x_1%20%2Cx_2) are weight and height,  
+
 ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20f%27%28x%29%20%3D%20%5Cleft%20%28%20%5Cfrac%7B1%7D%7B1&plus;e%5E%7B-x%7D%7D%20%5Cright%20%29%27%20%3D%20%5Cfrac%7Be%5E%7B-x%7D%7D%7B%281&plus;e%5E%7B-x%7D%29%5E2%7D%20%3D%20f%28x%29*%5Cleft%20%28%201-f%28x%29%20%5Cright%20%29).
 
 
@@ -339,18 +346,18 @@ This tells us that if we were to increase ![equation](https://latex.codecogs.com
 ## Training: Stochastic Gradient Descent (SGD):sparkles:
 **We have all the tools we need to train a neural network now!**
 
-Next we’ll use an optimization algorithm called [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) that tells us how to change our weights and biases to minimize loss. It’s basically just this update equation:  
-![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20w_1%5Cleftarrow%20w_1%20-%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D)
+Next we’ll use an optimization algorithm called [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) that tells us how to change our weights and biases to minimize loss. It’s basically just this update equation:   ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20w_1%5Cleftarrow%20w_1%20-%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D)
 
 > **η** is a constant called the learning rate that controls how fast we train.
 
 All we’re doing is subtracting ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D) from ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20w_1):  
+
 *  If ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D) is positive, ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20w_1) will decrease, which makes *L* decrease.  
 *  If ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D) is negative, ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20w_1) will increase, which makes *L* decrease.
 
 If we do this for every weight and bias in the network, the loss will slowly decrease and our network will improve.
 
-:triangular_flag_on_post:Our training process will look like this:
+Our training process will look like this:
 
 1.  Choose **one** sample from our dataset. This is what makes it **stochastic gradient descent** - we only operate on one sample at a time.  
 2.  Calculate all the partial derivatives of loss with respect to weights or biases(e.g.![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D),![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_2%7D),etc)  
@@ -506,7 +513,7 @@ network.train(data, all_y_trues)
 
 *Complete code also available on [Github](https://github.com/vzhou842/neural-network-from-scratch).*
 
-Our loss steadily decreases as the network learns:  
+Our loss steadily decreases as the network learns:
 ![](https://victorzhou.com/media/neural-network-post/loss.png)
 
 Now use the network to predict genders:
