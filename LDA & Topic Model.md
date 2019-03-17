@@ -21,19 +21,19 @@ Unfortunately, there is no way to infer the topics exactly: there are too many u
 
 :question: How are we going to decide whether this occurrence of W belongs to topic *Z*?
 
-:runner: We can’t know for sure. But one way to guess is to consider two questions.
+We can’t know for sure. But one way to guess is to consider two questions.
   A) How often does word *W* appear in topic *Z* elsewhere? If *W* often occurs in discussions of *Z*, then this instance of *W* might belong to *Z* as well. :grey_exclamation: But a word can be common in more than one topic. :point_right: So next we consider
   B) How common is topic *Z* in the rest of this document?
 
 :cactus: Here’s what we’ll do.   
 For each possible topic *Z*, we’ll multiply the frequency of this word type *W* in *Z* by the number of other words in document *D* that already belong to *Z*. The result will represent the probability that this word came from *Z*. Here’s the actual formula:  
-![equation](https://latex.codecogs.com/gif.latex?P%5Cleft%20%28%20Z%20%5Cmid%20W%2CD%20%5Cright%20%29%3D%20%5Cfrac%7B%5Ctext%7B%23%20of%20word%20W%20in%20topic%20Z%20&plus;%20%7D%5Cbeta_%7Bw%7D%7D%7B%20%5Ctext%7Btotal%20tokensin%20Z%20&plus;%20%7D%5Cbeta%7D%20%5Ctimes%20%5Ctext%7B%28%23%20of%20words%20in%20D%20that%20belongs%20to%20Z%29%20&plus;%20%5Calpha%7D)
+$$P\left ( Z \mid W,D \right )= \frac{\text{# of word W in topic Z + }\beta_{w}}{ \text{total tokensin Z + }\beta} \times \text{(# of words in D that belongs to Z) + \alpha}$$
 
-```
+
 > Greek letters -- “hyperparameters” OR fudge factors.   
 **There’s some chance that this word belongs to topic Z even if it is nowhere else associated with Z; the fudge factors keep that possibility open.**   
 The overall emphasis on probability in this technique, so it’s called **probabilistic topic modeling**.
-```
+
 :exclamation: By improvement, our model will gradually become more consistent as topics focus on specific words and documents. **But** can’t ever become perfectly consistent, because words and documents don’t line up in one-to-one fashion. So the tendency for topics to concentrate on particular words and documents will eventually be limited by the actual, messy distribution of words across documents.
 
 That’s how topic modeling works in practice. You assign words to topics randomly and then just keep improving the model, to make your guess more internally consistent, until the model reaches an equilibrium that is as consistent as the collection allows.
@@ -42,14 +42,13 @@ That’s how topic modeling works in practice. You assign words to topics random
 
 Topic modeling gives us a way to infer the latent structure behind a collection of documents. This technique becomes more useful as we move toward a scale that is too large to fit into human memory.
 
-```
 :cop: **A bit of tuning required up front**  
 In particular, a standard list of `stopwords` is rarely adequate.   
 For instance, in topic-modeling fiction it's useful to get rid of
   *   *the most common personal pronouns*: because otherwise the difference between 1st and 3rd person point-of-view becomes a dominant signal that crowds out other interesting phenomena.
   *   *personal names*: otherwise you discover strong, boring connections between every book with a character named “Richard.”   
 This sort of thing is very much a critical judgment call; it’s not a science.
-```
+
 
 ```
 :man: **author signal**
@@ -88,8 +87,7 @@ LDA seemed like a fragile and unnecessarily complicated technique.
   In general, it’s a good idea to approach these skeptically. They all promise to do more than LDA does, but they also add additional assumptions to the model.
 
   
-```
+
 *ArtiCle Refrence*
 1. [Introduction to Latent Dirichlet Allocation](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)
 2. [Topic modeling made just simple enough.](https://tedunderwood.com/2012/04/07/topic-modeling-made-just-simple-enough/)
-```
