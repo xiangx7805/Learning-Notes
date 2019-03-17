@@ -314,12 +314,14 @@ Imagine we wanted to tweak ![equation](https://latex.codecogs.com/svg.latex?%5Ci
 
 >The system of calculating partial derivatives by working backwards is known as **backpropagation**, or “backprop”.
 
-Through **backpropagation** we have : ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20*%20%5Cfrac%7B%5Cpartial%20%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20*%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D),
-where ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20%5Cfrac%7B%5Cpartial%20%281-y_%7Bpred%7D%29%5E2%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20-2%281-y_%7Bpred%7D%29),  
-      ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20y_%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20o_1%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_5h_1&plus;w_6h_2&plus;b_3%29%7D%7B%5Cpartial%20h_1%7D%20%3D%20w_5%20*f%27%28w_5h_1&plus;w_6h_2&plus;b_3%29),  
-      ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29%7D%7B%5Cpartial%20w_1%7D%20%3D%20x_1f%27%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29),   
-      ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20x_1%20%2Cx_2) are weight and height,  
-      ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20f%27%28x%29%20%3D%20%5Cleft%20%28%20%5Cfrac%7B1%7D%7B1&plus;e%5E%7B-x%7D%7D%20%5Cright%20%29%27%20%3D%20%5Cfrac%7Be%5E%7B-x%7D%7D%7B%281&plus;e%5E%7B-x%7D%29%5E2%7D%20%3D%20f%28x%29*%5Cleft%20%28%201-f%28x%29%20%5Cright%20%29).
+Through **backpropagation** we have :   
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20*%20%5Cfrac%7B%5Cpartial%20%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20*%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D),  
+where   
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20%5Cfrac%7B%5Cpartial%20%281-y_%7Bpred%7D%29%5E2%7D%7B%5Cpartial%20y_%7Bpred%7D%7D%20%3D%20-2%281-y_%7Bpred%7D%29),    
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20y_%7Bpred%7D%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20o_1%7D%7B%5Cpartial%20h_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_5h_1&plus;w_6h_2&plus;b_3%29%7D%7B%5Cpartial%20h_1%7D%20%3D%20w_5%20*f%27%28w_5h_1&plus;w_6h_2&plus;b_3%29),      
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20%5Cfrac%7B%5Cpartial%20h_1%7D%7B%5Cpartial%20w_1%7D%20%3D%20%5Cfrac%7B%5Cpartial%20f%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29%7D%7B%5Cpartial%20w_1%7D%20%3D%20x_1f%27%28w_1x_1%20&plus;%20w_2x_2&plus;b_1%29),     
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20x_1%20%2Cx_2) are weight and height,    
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cfn_cm%20%5Clarge%20f%27%28x%29%20%3D%20%5Cleft%20%28%20%5Cfrac%7B1%7D%7B1&plus;e%5E%7B-x%7D%7D%20%5Cright%20%29%27%20%3D%20%5Cfrac%7Be%5E%7B-x%7D%7D%7B%281&plus;e%5E%7B-x%7D%29%5E2%7D%20%3D%20f%28x%29*%5Cleft%20%28%201-f%28x%29%20%5Cright%20%29).
 
 
 ## Example: Calculating the Partial Derivative  :star2:
